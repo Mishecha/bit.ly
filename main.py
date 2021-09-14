@@ -39,7 +39,7 @@ if __name__ == '__main__':
   parser = argparse.ArgumentParser(
     description='Сокращение ссылок'
   )
-  parser.add_argument('user_link', help='')
+  parser.add_argument('user_link', help='этот код не только сокращаает ссылки, но и узнаёт сколько людей перешло по этой сыллке. Для этого в терминал напишите сокращённую ссылку')
   user_link = parser.parse_args().user_link
 
 
