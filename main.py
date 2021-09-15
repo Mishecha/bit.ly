@@ -5,7 +5,10 @@ from dotenv import load_dotenv
 import argparse
 
 
-def shorten_link(headers, payload):
+def shorten_link(headers):
+  payload = {
+    'long_url': user_link
+  }
   shorten_url = 'https://api-ssl.bitly.com/v4/shorten'
   response = requests.post(shorten_url, headers=headers, json=payload)
   response.raise_for_status()
@@ -52,15 +55,10 @@ if __name__ == '__main__':
   }
 
 
-  payload = {
-    'long_url': user_link
-  }
-
-
   try:
     if is_bitlink(headers, netloc_and_path):
       print('{}{}'.format('количество кликов: ', count_clicks(headers, netloc_and_path)))
     else:
-      print(shorten_link(headers, payload))
+      print(shorten_link(headers))
   except requests.exceptions.HTTPError:
     print('Неправильная ссылка')
