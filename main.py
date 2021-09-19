@@ -43,9 +43,9 @@ if __name__ == '__main__':
   parser = argparse.ArgumentParser(
     description='Сокращение ссылок'
   )
-  parser.add_argument('user_link', help='этот код не только сокращает ссылки,\
-   но и узнаёт сколько людей перешло по этой сыллке.\
-   Для этого в терминал напишите сокращённую ссылку')
+  parser.add_argument('user_link', help='\
+  Для того что бы сократить ссылку надо написать в терминал main.py и ссылку для сокращения.\
+  А что бы узнать сколько людей перешло по ссылке, надо написать в терминал main.py и сокращённую ссылку.')
   user_link = parser.parse_args().user_link
 
   bitly_token = os.environ['BITLY_TOKEN']
