@@ -46,7 +46,6 @@ if __name__ == '__main__':
   parser.add_argument('user_link', help='этот код не только сокращает ссылки, но и узнаёт сколько людей перешло по этой сыллке. Для этого в терминал напишите сокращённую ссылку')
   user_link = parser.parse_args().user_link
 
-
   bitly_token = os.environ['BITLY_TOKEN']
   netloc_and_path = get_parsed_user_link(user_link)
   
