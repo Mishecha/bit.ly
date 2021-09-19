@@ -58,7 +58,7 @@ if __name__ == '__main__':
 
   try:
     if is_bitlink(headers, netloc_and_path):
-      print('{}{}'.format('количество кликов: ', count_clicks(headers, netloc_and_path)))
+      print('количество кликов:', count_clicks(headers, netloc_and_path)))
     else:
       print(shorten_link(headers))
   except requests.exceptions.HTTPError:
