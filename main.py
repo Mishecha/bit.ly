@@ -33,7 +33,7 @@ def get_parsed_user_link(user_link):
   parsed_link = urlparse(user_link)
   netloc = parsed_link.netloc
   path = parsed_link.path
-  return '{}{}'.format(path ,netloc)
+  return '{}{}'.format(path, netloc)
 
 
 if __name__ == '__main__':
