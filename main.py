@@ -39,23 +39,22 @@ def get_parsed_user_link(user_link):
 if __name__ == '__main__':
   load_dotenv()
 
-
   parser = argparse.ArgumentParser(
     description='Сокращение ссылок'
   )
+
   parser.add_argument('user_link', help='\
   Для того что бы код сократил ссылку, надо написать в терминал main.py и ссылку для сокращения.\
   А что бы узнать сколько людей перешло по ссылке, надо написать в терминал main.py и сокращённую ссылку.')
+
   user_link = parser.parse_args().user_link
 
   bitly_token = os.environ['BITLY_TOKEN']
   netloc_and_path = get_parsed_user_link(user_link)
-  
 
   headers = {
     'Authorization': f'Bearer {bitly_token}'
   }
-
 
   try:
     if is_bitlink(headers, netloc_and_path):
